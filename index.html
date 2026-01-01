@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FL 2-15 Flashcards (MCQ)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1>FL 2-15 Flashcards (MCQ)</h1>
+        <p class="sub">Social Insurance • Health Policies • Life Policies • Riders/Provisions • Application/Underwriting/Delivery</p>
+      </div>
+      <div class="pill" id="progressPill">0 / 0</div>
+    </header>
+
+    <section class="panel controls">
+      <div class="row">
+        <label>
+          Category
+          <select id="categorySelect"></select>
+        </label>
+
+        <label>
+          Mode
+          <select id="modeSelect">
+            <option value="all">All Questions</option>
+            <option value="missed">Missed Only</option>
+            <option value="flagged">Flagged Only</option>
+          </select>
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" id="shuffleToggle" />
+          Shuffle
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" id="autoAdvanceToggle" />
+          Auto-advance after answer
+        </label>
+
+        <button class="btn secondary" id="resetBtn">Reset Stats</button>
+      </div>
+
+      <div class="row stats">
+        <div class="stat">
+          <div class="statLabel">Correct</div>
+          <div class="statValue" id="correctCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel">Incorrect</div>
+          <div class="statValue" id="incorrectCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel">Accuracy</div>
+          <div class="statValue" id="accuracyPct">0%</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel">Missed Deck</div>
+          <div class="statValue" id="missedCount">0</div>
+        </div>
+        <div class="stat">
+          <div class="statLabel">Flagged</div>
+          <div class="statValue" id="flaggedCount">0</div>
+        </div>
+      </div>
+    </section>
+
+    <main class="panel card">
+      <div class="meta">
+        <div class="tag" id="categoryTag">—</div>
+        <div class="tag" id="difficultyTag">—</div>
+        <button class="tag tagBtn" id="flagBtn" title="Flag this question for review">☆ Flag</button>
+      </div>
+
+      <h2 class="question" id="questionText">Loading…</h2>
+
+      <div class="choices" id="choicesWrap"></div>
+
+      <div class="reveal" id="revealWrap" hidden>
+        <div class="answerLine">
+          <span class="label">Answer:</span>
+          <span id="answerText"></span>
+        </div>
+        <div class="explainLine">
+          <span class="label">Why:</span>
+          <span id="explainText"></span>
+        </div>
+        <div class="tiny" id="refText"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn secondary" id="backBtn">Back</button>
+        <button class="btn" id="nextBtn">Next</button>
+      </div>
+    </main>
+
+    <footer class="footer">
+      Tip: Use “Missed Only” to drill weak areas and “Flagged Only” for review. Question bank lives in <code>questions.js</code>.
+    </footer>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
